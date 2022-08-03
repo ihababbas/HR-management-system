@@ -5,6 +5,8 @@ var person = {
     FullName: "Ghazi Samer",
     Department: "Administration",
     Level: "Senior",
+    imageURL: "https://www.pngitem.com/middle/iTTbx_keep-calm-and-carry-on-clip-art-crown/",
+
   add: function(){
     ID = ID + 1;
     return ID ;
