@@ -207,7 +207,7 @@ var person = {
         else ( person.Level == "Junior" )
         {var fullsalary = Math.floor(Math.random() * (1000 - 500) ) + 500; 
             var net = fullsalary - (fullsalary * 0.075);     
-            return net; 
+            return net; /
         }
       }  
 };
