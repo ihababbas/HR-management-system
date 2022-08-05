@@ -1,5 +1,6 @@
 'use strict';
 const body = document.getElementsByTagName('body');
+
 var ID = 999;
 var net = 0;
 var allUsers = [];
@@ -16,7 +17,7 @@ function add() {
    else if ( x == "Mid-Senior" )
     {var fullsalary= Math.floor(Math.random() * (1500 - 1000) ) + 1000; 
         var net = fullsalary - (fullsalary * 0.075);     
-        return net;  } 
+        return net;  }  
     else ( x == "Junior" )
     {var fullsalary = Math.floor(Math.random() * (1000 - 500) ) + 500; 
         var net = fullsalary - (fullsalary * 0.075);     
@@ -49,38 +50,53 @@ const num1 = new Person ("Ghazi Samer","Administration","Senior", "./assets/Ghaz
 const num2 = new Person ("Lana Ali","Finance","Senior", "./assets/Lana.jpg" , 0 ,0);
 const num3 = new Person ("Tamara Ayoub","Marketing","Senior", "./assets/Tamara.jpg" , 0 ,0);
 const num4 = new Person ("Safi Walid","Administration","Mid-Senior","./assets/Safi.jpg", 0 ,0);
-const num5 = new Person ("Omar Zaid","Development","Senior","./assets/Omer.jpg", 0 ,0);
+const num5 = new Person ("Omar Zaid","Development","Senior","./assets/Omar.jpg", 0 ,0);
 const num6 = new Person ("Rana Saleh","Development","Junior","./assets/Rana.jpg", 0 ,0);
 const num7 = new Person ("Hadi Ahmad","Finance","Mid-Senior","./assets/Hadi.jpg", 0 ,0);
 
+
+
+//body[0].appendChild(main);
+
 const Section = document.createElement('section');
+
+body[0].childNodes[3].appendChild(Section);
 Section.classList.add('contanier');
 
-body[0].appendChild(Section);
-const divEl = document.createElement('div');
-Section.appendChild(divEl);
-divEl.classList.add('card');
+
 
 Person.prototype.write = function() {
-    
+  const divEl = document.createElement('div');
+  Section.appendChild(divEl);
+  divEl.classList.add('card'); 
     const divE2 = document.createElement('div');
     divEl.appendChild(divE2);
     divE2.classList.add('card-image');
-/*    const imgEl = document.createElement('img');
+    const imgEl = document.createElement('img');
     
     imgEl.src = this.imageURL;
     imgEl.alt = this.name;
-    divE2.appendChild(imgEl); */
+    divE2.appendChild(imgEl); 
+
+    const divE3 = document.createElement('div');
+    divEl.appendChild(divE3);
+    divE3.classList.add('div3');
+    
+
+
 
     const h2El = document.createElement('h2');
-h2El.textContent = this.Name
-divEl.appendChild(h2El);
+    h2El.classList.add('h'); 
+h2El.textContent = "Name:" +this.Name
+divE3.appendChild(h2El);
 const h4El = document.createElement('h4');
-h4El.textContent = this.Level
-divEl.appendChild(h4El);
+h4El.classList.add('h'); 
+h4El.textContent = "Level:" +this.Level
+divE3.appendChild(h4El);
 const h5El = document.createElement('h5');
-h5El.textContent = this.Salary
-divEl.appendChild(h5El);
+h5El.classList.add('h'); 
+h5El.textContent = "Salary:" + this.Salary;
+divE3.appendChild(h5El);
 
 };
 
